@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="http://truffledog.test/css/bundle.min.css?r=784"
+    />
+    <!-- <link rel="stylesheet" href="bundle.min.css" /> -->
+    <title>Truffltest</title>
+  </head>
+  <body>
+    <header>
+      <svg
+        style="position: absolute; width: 0; height: 0"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <symbol id="icon-video" viewBox="0 0 32 32">
+            <title>video</title>
+            <path
+              d="M30.662 5.003C26.174 4.358 21.214 4 16 4S5.826 4.358 1.338 5.003C.478 8.369 0 12.089 0 16c0 3.911.477 7.63 1.338 10.997C5.827 27.642 10.786 28 16 28s10.174-.358 14.662-1.003C31.522 23.631 32 19.911 32 16c0-3.911-.477-7.63-1.338-10.997zM12 22V10l10 6-10 6z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-plus" viewBox="0 0 32 32">
+            <title>plus</title>
+            <path
+              d="M29.125 12.5H19.5V2.875A.875.875 0 0 0 18.625 2h-5.25a.875.875 0 0 0-.875.875V12.5H2.875a.875.875 0 0 0-.875.875v5.25c0 .483.392.875.875.875H12.5v9.625c0 .483.392.875.875.875h5.25a.875.875 0 0 0 .875-.875V19.5h9.625a.875.875 0 0 0 .875-.875v-5.25a.875.875 0 0 0-.875-.875z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <symbol id="icon-news" viewBox="0 0 32 32">
+            <title>news</title>
+            <path
+              d="M28 8V4H0v22a2 2 0 0 0 2 2h27a3 3 0 0 0 3-3V8h-4zm-2 18H2V6h24v20zM4 10h20v2H4v-2zm12 4h8v2h-8v-2zm0 4h8v2h-8v-2zm0 4h6v2h-6v-2zM4 14h10v10H4V14z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-map" viewBox="0 0 32 32">
+            <title>map</title>
+            <path
+              d="M15 2c-4.97 0-9 3.917-9 8.75C6 19.5 15 30 15 30s9-10.5 9-19.25C24 5.917 19.97 2 15 2zm0 14c-2.983 0-5.4-2.35-5.4-5.25S12.017 5.5 15 5.5c2.983 0 5.4 2.35 5.4 5.25S17.983 16 15 16z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-lens" viewBox="0 0 32 32">
+            <title>lens</title>
+            <path
+              d="M29.158 25.954l-6.431-5.47c-.665-.599-1.376-.874-1.95-.847a10.143 10.143 0 0 0 2.434-6.608c0-5.622-4.559-10.181-10.182-10.181-5.622 0-10.181 4.559-10.181 10.181 0 5.623 4.559 10.182 10.181 10.182 2.522 0 4.83-.917 6.608-2.435-.027.575.248 1.286.846 1.95l5.47 6.432c.937 1.04 2.467 1.129 3.4.195.934-.933.846-2.463-.195-3.4zM13.03 19.818a6.788 6.788 0 1 1 0-13.576 6.788 6.788 0 0 1 0 13.576z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-event" viewBox="0 0 32 32">
+            <title>event</title>
+            <path
+              d="M17.75 10.75l3.5 3.5-7 7-3.5-3.5 7-7zm11.636-.615l-2.01-2.01L26.5 9A2.475 2.475 0 0 1 23 5.5l.875-.876-2.01-2.01a2.114 2.114 0 0 0-2.98 0l-16.27 16.27a2.114 2.114 0 0 0 0 2.98l2.01 2.01L5.5 23A2.474 2.474 0 1 1 9 26.5l-.875.874 2.01 2.01c.819.819 2.16.819 2.98 0l16.27-16.27c.819-.82.819-2.161 0-2.98zM14.25 24.75l-7-7 10.5-10.5 7 7-10.5 10.5z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-calendar" viewBox="0 0 32 32">
+            <title>calendar</title>
+            <path
+              d="M11.667 12.5h3.466V16h-3.466v-3.5zm5.2 0h3.466V16h-3.466v-3.5zm5.2 0h3.466V16h-3.466v-3.5zM6.467 23h3.466v3.5H6.467V23zm5.2 0h3.466v3.5h-3.466V23zm5.2 0h3.466v3.5h-3.466V23zm-5.2-5.25h3.466v3.5h-3.466v-3.5zm5.2 0h3.466v3.5h-3.466v-3.5zm5.2 0h3.466v3.5h-3.466v-3.5zm-15.6 0h3.466v3.5H6.467v-3.5zM25.533 2v1.75h-3.466V2H9.933v1.75H6.467V2H3v28h26V2h-3.467zm1.734 26.25H4.733V9h22.534v19.25z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-arrow-down" viewBox="0 0 32 32">
+            <title>arrow down</title>
+            <path
+              d="M29.125 12.5H19.5V2.875A.875.875 0 0 0 18.625 2h-5.25a.875.875 0 0 0-.875.875V12.5H2.875a.875.875 0 0 0-.875.875v5.25c0 .483.392.875.875.875H12.5v9.625c0 .483.392.875.875.875h5.25a.875.875 0 0 0 .875-.875V19.5h9.625a.875.875 0 0 0 .875-.875v-5.25a.875.875 0 0 0-.875-.875z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <symbol id="icon-settings" viewBox="0 0 32 32">
+            <title>settings</title>
+            <path
+              d="M14.25 5.786v-.447c0-.736-.59-1.339-1.313-1.339H8.564C7.84 4 7.25 4.603 7.25 5.34v.446H2v3.571h5.25v.447c0 .736.59 1.339 1.313 1.339h4.374c.722 0 1.313-.603 1.313-1.34v-.446H30V5.786H14.25zM9 9.357V5.786h3.5v3.571H9zm15.75 4.91c0-.736-.59-1.338-1.313-1.338h-4.375c-.721 0-1.312.602-1.312 1.339v.446H2v3.572h15.75v.446c0 .737.59 1.34 1.313 1.34h4.375c.721 0 1.312-.603 1.312-1.34v-.446H30v-3.572h-5.25v-.446zm-5.25 4.019v-3.572H23v3.572h-3.5zm-5.25 4.91c0-.736-.59-1.339-1.313-1.339H8.564c-.722 0-1.313.603-1.313 1.34v.446H2v3.571h5.25v.447c0 .736.59 1.339 1.313 1.339h4.374c.722 0 1.313-.603 1.313-1.34v-.446H30v-3.571H14.25v-.447zM9 27.214v-3.571h3.5v3.571H9z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-close" viewBox="0 0 32 32">
+            <title>close</title>
+            <path
+              d="M16 2c7.732 0 14 6.268 14 14s-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2zm4.375 7L16 13.375 11.625 9 9 11.625 13.375 16 9 20.375 11.625 23 16 18.625 20.375 23 23 20.375 18.625 16 23 11.625 20.375 9z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-cross" viewBox="0 0 32 32">
+            <title>cross</title>
+            <path
+              d="M24.75 2L16 10.75 7.25 2 2 7.25 10.75 16 2 24.75 7.25 30 16 21.25 24.75 30 30 24.75 21.25 16 30 7.25z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-circle-down" viewBox="0 0 32 32">
+            <title>circle down</title>
+            <path
+              d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14zM4.625 16c0 6.282 5.092 11.375 11.375 11.375 6.282 0 11.375-5.093 11.375-11.375 0-6.283-5.093-11.375-11.375-11.375C9.717 4.625 4.625 9.717 4.625 16zm6.05-4.3l5.324 5.326 5.325-5.325 2.475 2.475-7.8 7.8-7.8-7.8 2.476-2.476z"
+              fill-rule="nonzero"
+            />
+          </symbol>
+          <symbol id="icon-closeside" viewBox="0 0 32 32">
+            <path
+              fill="#666"
+              fill-rule="nonzero"
+              d="M24.75 2L16 10.75 7.25 2 2 7.25 10.75 16 2 24.75 7.25 30 16 21.25 24.75 30 30 24.75 21.25 16 30 7.25z"
+            />
+          </symbol>
+        </defs>
+      </svg>
+      <div
+        class="c-header o-flex o-flex-space-betweem o-flex-center u-p-l-16 u-p-r-16 u-m-b-24"
+      >
+        <a href="/">
+          <img class="c-header__logo u-m-r-24" src="/images/logo.svg" alt="" />
+        </a>
+
+        <div class="c-header__toolbar">
+          <nav class="c-nav">
+            <a href="/" class="c-nav__item c-nav__item--active">
+              <svg class="o-icon o-icon--medium">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="#icon-news"
+                ></use>
+              </svg>
+              <span class="c-nav__text u-m-l-8">notizie</span>
+            </a>
+            <a href="/map/" class="c-nav__item">
+              <svg class="o-icon o-icon--medium">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="#icon-map"
+                ></use>
+              </svg>
+              <span class="c-nav__text u-m-l-8">mappa</span>
+            </a>
+          </nav>
+
+          <!--    <div class="pd">-->
+          <!--      <div class="container">-->
+          <!--        <label class="switch" for="checkbox">-->
+          <!--          <input type="checkbox" id="checkbox" />-->
+          <!--          <div class="slider round"></div>-->
+          <!--        </label>-->
+          <!--      </div>-->
+          <!--    </div>-->
+          <div class="c-search c-dropdown o-box">
+            <div class="js-search-string-wrapper">
+              <input
+                type="search"
+                class="c-search__text js-search-searchstring"
+                name="search_string"
+                placeholder="Cerca"
+              />
+              <svg class="o-icon o-icon--light o-icon--medium js-action-search">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="#icon-lens"
+                ></use>
+              </svg>
+              <div class="c-dropdown__menu o-box">
+                <ul class="u-list-reset">
+                  <li
+                    class="c-dropdown__link c-dropdown__link--action js-advanced-trigger u-pointer"
+                  >
+                    <svg class="o-icon o-icon--light o-icon--small u-m-r-8">
+                      <use
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="#icon-settings"
+                      ></use>
+                    </svg>
+                    <span>ricerca avanzata</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="c-search__advanced o-box js-advanced-search u-p-24">
+              <div class="c-form">
+                <div class="c-form__line">
+                  <label class="c-form__label" for="">Cerca</label>
+                  <input
+                    type="search"
+                    class="c-form__text js-search-searchstring-main"
+                    name="search_string"
+                    data-type="search_string"
+                    placeholder="Cerca"
+                  />
+                </div>
+
+                <div class="c-form__line">
+                  <label class="c-form__label" for="">Escludi</label>
+                  <input
+                    type="search"
+                    class="c-form__text js-search-text-to-exclude"
+                    data-type="search_string_exclusions"
+                    name="search_string_exclusions"
+                    placeholder="Escludi"
+                  />
+                </div>
+                <div class="c-form__line">
+                  <label class="c-form__label" for="">Tags</label>
+                  <select
+                    class="c-form__select js-search-tags"
+                    name="tags"
+                  ></select>
+
+                  <div
+                    class="c-collapse u-hidden"
+                    data-reference="collapse-one"
+                  >
+                    <select
+                      class="c-form__select u-block js-search-tags-to-exclude"
+                      name="tags_exclusions"
+                    ></select>
+                  </div>
+                  <span
+                    class="c-collapse__collapser u-m-t-8 u-m-b-16 u-pointer"
+                    data-reference="collapse-one"
+                  >
+                    <svg class="o-icon o-icon--rotate o-icon--xsmall">
+                      <use
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="#icon-circle-down"
+                      ></use>
+                    </svg>
+                    escludi tags</span
+                  >
+                </div>
+
+                <div class="c-form__line">
+                  <label class="c-form__label" for="">Categorie</label>
+                  <select
+                    class="c-form__select js-search-categories"
+                    name="categories"
+                  ></select>
+
+                  <div
+                    class="c-collapse u-hidden"
+                    data-reference="collapse-two"
+                  >
+                    <select
+                      class="c-form__select u-block js-search-categories-to-exclude"
+                      name="categories_exclusions"
+                    ></select>
+                  </div>
+
+                  <span
+                    class="c-collapse__collapser u-m-t-8 u-m-b-16 u-pointer"
+                    data-reference="collapse-two"
+                  >
+                    <svg class="o-icon o-icon--rotate o-icon--xsmall">
+                      <use
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="#icon-circle-down"
+                      ></use>
+                    </svg>
+                    escludi categorie
+                  </span>
+                </div>
+
+                <div class="c-form__line">
+                  <label class="c-form__label" for="">Fonti</label>
+                  <select
+                    class="c-form__select js-search-network"
+                    name="networks"
+                  ></select>
+
+                  <div
+                    class="c-collapse u-hidden"
+                    data-reference="collapse-two"
+                  >
+                    <select
+                      class="c-form__select u-block js-search-network-to-exclude"
+                      name="networks_exclusions"
+                    ></select>
+                  </div>
+                  <span
+                    class="c-collapse__collapser u-m-t-8 u-m-b-16 u-pointer"
+                    data-reference="collapse-two"
+                  >
+                    <svg class="o-icon o-icon--rotate o-icon--xsmall">
+                      <use
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="#icon-circle-down"
+                      ></use>
+                    </svg>
+                    escludi fonti
+                  </span>
+                </div>
+
+                <div class="c-form__line">
+                  <label class="c-form__label" for="">Range temporale</label>
+                  <input
+                    class="c-form__date js-search-daterange"
+                    type="text"
+                    placeholder="Scegli un intervallo di date"
+                  />
+                  <input type="hidden" name="date_from" />
+                  <input type="hidden" name="date_to" />
+                </div>
+
+                <div class="c-form__actions u-p-t-8">
+                  <div class="c-button c-button--secondary js-advanced-trigger">
+                    Chiudi
+                  </div>
+                  <div
+                    class="c-button c-button--primary js-search-apply-filters"
+                  >
+                    Cerca
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ###################################################################################################### -->
+    <!-- ###################################################################################################### -->
+    <!-- ###################################################################################################### -->
+
+    <div class="row mx-auto u-max-1700">
+      <div class="border-right u-overflow-auto u-p-r-12 col-md-7 u-height-90">
+        <!-- <div> -->
+        <div class="u-flex u-flex--spacebetween u-flex--middle">
+          <h3 class="u-p-t-16 o-doublepica">Ultime notizie</h3>
+
+          <label class="js-settings">
+            <a href="#" class="o-icon o-icon--small js-settings o-gear"></a>
+          </label>
+        </div>
+
+        <div
+          class="c-filters__list c-settings_list o-flex o-flex-space-between u-hidden"
+        >
+          <h5 class="c-filters__title o-columbian">Impostazioni</h5>
+          <div class="js-settings-wrapper">
+            <ul class="c-filters__container">
+              <li class="u-m-b-8 u-m-r-8">
+                <label class="c-switch">
+                  <input type="checkbox" class="js-autorefresh" />
+                  <div></div>
+                </label>
+                Autorefresh
+              </li>
+              <li class="u-m-b-8 u-m-r-8">
+                <label class="c-switch">
+                  <input type="checkbox" class="js-display-content" />
+                  <div></div>
+                </label>
+                Grafica compatta
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tr data-news-id="9630" class="c-card--visited">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/vicenzatoday"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/vicenzatoday-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+              <!-- 0000FF -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Mal d'autunno, vi sentite gi&ugrave; di tono? Ecco cosa fare
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/veronasera"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/veronasera-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#2" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Mercatini di Natale: i pi&ugrave; belli da visitare in
+                    Veneto
+                  </h1></a
+                >
+              </td>
+
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630" class="u-news-active">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/today"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/today-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#3" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Cos'&egrave; questa storia delle vincite "sicure e rapide"
+                    al Lotto, per amici e parenti
+                  </h1></a
+                >
+              </td>
+
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/baritoday"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/baritoday-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+
+              <td class="align-middle p-1 position-relative">
+                <a href="#4" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Fal&ograve; di Santa Lucia al Macello
+                  </h1></a
+                >
+              </td>
+
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630" class="c-card--visited">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/vicenzatoday"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/vicenzatoday-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+              <!-- 0000FF -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Mal d'autunno, vi sentite gi&ugrave; di tono? Ecco cosa fare
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/veronasera"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/veronasera-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#2" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Mercatini di Natale: i pi&ugrave; belli da visitare in
+                    Veneto
+                  </h1></a
+                >
+              </td>
+
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/today"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/today-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#3" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Cos'&egrave; questa storia delle vincite "sicure e rapide"
+                    al Lotto, per amici e parenti
+                  </h1></a
+                >
+              </td>
+
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/baritoday"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/baritoday-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+
+              <td class="align-middle p-1 position-relative">
+                <a href="#4" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Fal&ograve; di Santa Lucia al Macello
+                  </h1></a
+                >
+              </td>
+
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/romatoday"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/romatoday-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#5" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Pini e querce per i boschi urbani delle periferie: si parte
+                    con 1824 alberi
+                  </h1></a
+                >
+              </td>
+
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/lecceprima"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/lecceprima-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+
+              <td class="align-middle p-1 position-relative">
+                <a href="#6" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Dal 7 al 10 dicembre tornano alle Officine Cantelmo i
+                    mercatini di Natale
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/today"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/today-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#7" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    John Lennon: Murder Without A Trial
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/ravennatoday"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/ravennatoday-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+
+              <td class="align-middle p-1 position-relative">
+                <a href="#8" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Estendere il servizio di salvataggio a fine settembre?
+                    Confartigianato: "S&igrave;, ma coordinare le varie zone"
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/vicenzatoday"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/vicenzatoday-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#1" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Mal d'autunno, vi sentite gi&ugrave; di tono? Ecco cosa fare
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/veronasera"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/veronasera-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#2" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Mercatini di Natale: i pi&ugrave; belli da visitare in
+                    Veneto
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/today"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/today-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#3" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Cos'&egrave; questa storia delle vincite "sicure e rapide"
+                    al Lotto, per amici e parenti
+                  </h1></a
+                >
+              </td>
+
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/today"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/today-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1 position-relative">
+                <a href="#7" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    John Lennon: Murder Without A Trial
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+            <tr data-news-id="9630">
+              <!-- <article data-news-id="9630"> -->
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="c-byline__source u-d-inline-block">
+                  <a
+                    class="u-embossed u-embossed--link"
+                    href="/search/networks/ravennatoday"
+                  >
+                    <img
+                      class="c-byline__logo u-m-r-8"
+                      src="/images/brands/ravennatoday-logo.svg"
+                    />
+                  </a>
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+              <td class="align-middle p-1">
+                <div class="o-pica o-weight-bold u-d-inline-block">
+                  6 dic 12:17
+                </div>
+              </td>
+
+              <!-- ################################################### -->
+
+              <td class="align-middle p-1 position-relative">
+                <a href="#8" class="c-card__link">
+                  <h1 class="c-card__title o-weight-medium u-m-b-0">
+                    Estendere il servizio di salvataggio a fine settembre?
+                    Confartigianato: "S&igrave;, ma coordinare le varie zone"
+                  </h1></a
+                >
+              </td>
+              <!-- </article> -->
+            </tr>
+          </table>
+        </div>
+
+        <!-- <article class="c-card u-m-b-16" data-news-id="9630">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/alimentazione"
+              >Alimentazione</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Mal d'autunno, vi sentite gi&ugrave; di tono? Ecco cosa fare
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/vicenzatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/vicenzatoday-logo.svg"
+                  /><span class="c-byline__brand">vicenzatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:17
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Un malessere che si pu&ograve; combattere
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/alimentazione" class="c-tag"
+                  >#alimentazione</a
+                >
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/autunno" class="c-tag">#autunno</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/malessere" class="c-tag">#malessere</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/9630/autunno-malessere-alimentazione-sintomi-rimedi.html"
+            class="c-card__link"
+          ></a>
+        </article> -->
+        <!--
+        <article class="c-card u-m-b-16" data-news-id="9400">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title o-label__featrure o-label--purple"
+              href="/search/categories/eventi"
+              >Eventi</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Mercatini di Natale: i pi&ugrave; belli da visitare in Veneto
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/veronasera"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/veronasera-logo.svg"
+                  /><span class="c-byline__brand">veronasera</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:17
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Dai monti al mare, passando per le citt&agrave; storiche, i luoghi
+              da visitare per vivere la vera atmosfera delle feste
+            </p>
+          </div>
+          <a
+            href="/news/9400/mercatini-di-natale-i-piu-belli-da-visitare-in-veneto.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="8100">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/attualita"
+              >Attualit&agrave;</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Cos'&egrave; questa storia delle vincite "sicure e rapide" al
+              Lotto, per amici e parenti
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/today"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/today-logo.svg"
+                  /><span class="c-byline__brand">today</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:13
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              L'indagine della procura di Torino su alcuni casi sospetti di
+              ingenti vincite in citt&agrave;, legate a giocate intensive
+              effettuate da poche persone. Le anomalie sono state riscontrate
+              dall'Agenzia
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/lotto" class="c-tag">#lotto</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/truffe" class="c-tag">#truffe</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/8100/vincite-lotto-truffa-cosa-succede.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="813">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title o-label__featrure o-label--purple"
+              href="/search/categories/eventi"
+              >Eventi</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Fal&ograve; di Santa Lucia al Macello
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/baritoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/baritoday-logo.svg"
+                  /><span class="c-byline__brand">baritoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:11
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              L'appuntamento fisso di ogni anno a dicembre del Macello &egrave;
+              pronto per essere annunciato: il sempre caloroso fal&ograve; di
+              Santa Lucia! Una "calda" serata di dicembre tra fuoco, luci,
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/ricchitoni" class="c-tag">#Ricchitoni</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/falo-di-santa-lucia" class="c-tag"
+                  >#fal&ograve; di santa Lucia</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/813/falo-al-macello-ricchitoni-12-dicembre-2023.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="7237">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/politica"
+              >Politica</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Pini e querce per i boschi urbani delle periferie: si parte con
+              1824 alberi
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/romatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/romatoday-logo.svg"
+                  /><span class="c-byline__brand">romatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:11
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Migliaia di alberi ed arbusti ottenuti grazie al decreto clima.
+              Saranno piantati in tre differenti quadranti
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/sabrina-alfonsi" class="c-tag"
+                  >#Sabrina Alfonsi</a
+                >
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/alberi" class="c-tag">#alberi</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/7237/bosco-urbano-parco-delle-canapiglie.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="4109">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title o-label__featrure o-label--purple"
+              href="/search/categories/eventi"
+              >Eventi</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Dal 7 al 10 dicembre tornano alle Officine Cantelmo i mercatini di
+              Natale
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/lecceprima"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/lecceprima-logo.svg"
+                  /><span class="c-byline__brand">lecceprima</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:08
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              LECCE - Da gioved&igrave; 7 a domenica 10 dicembre (dalle 10 alle
+              21 - ingresso libero) tornano i Mercatini di Natale delle Officine
+              Cantelmo di Lecce. Un appuntamento
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/mercatini-di-natale" class="c-tag"
+                  >#mercatini di natale</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/4109/mercatini-natale-cantelmo-lecce-6-dicembre-2023.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="8107">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/paramount"
+              >Paramount
+            </a>
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              John Lennon: Murder Without A Trial
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/today"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/today-logo.svg"
+                  /><span class="c-byline__brand">today</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:07
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Una docuserie che che offre un esame pi&ugrave; approfondito
+              dell'omicidio di John Lennon che nel 1980 ha scioccato e
+              rattristato il mondo
+            </p>
+          </div>
+          <a
+            href="/news/8107/John-Lennon-Murder-Without-A-Trial.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="6716">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/cronaca"
+              >Cronaca</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Estendere il servizio di salvataggio a fine settembre?
+              Confartigianato: "S&igrave;, ma coordinare le varie zone"
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/ravennatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/ravennatoday-logo.svg"
+                  /><span class="c-byline__brand">ravennatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:07
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              In questi giorni si stanno svolgendo incontri tra la Regione, i
+              Comuni e le Coop Spiagge in vista della stagione 2024
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/bagnini" class="c-tag">#bagnini</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/confartigianato" class="c-tag"
+                  >#confartigianato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/6716/estendere-il-servizio-di-salvataggio-a-fine-settembre-confartigianato-si-ma-coordinare-le-varie-zone.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="778">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/social"
+              >social</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Il Palazzo dell&rsquo;Acqua apre le porte durante le
+              festivit&agrave; natalizie: visite straordinarie dall'Immacolata
+              all'Epifania
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/baritoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/baritoday-logo.svg"
+                  /><span class="c-byline__brand">baritoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:06
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Fioccano le prenotazioni per i fine settimana e le aperture
+              straordinarie dell&rsquo;Immacolata, di Natale, di Capodanno e
+              dell&rsquo;Epifania. Da inizio 2023 oltre 2.800 gli ingressi
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/natale" class="c-tag">#natale</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/palazzo-dell-acqua" class="c-tag"
+                  >#palazzo dell'Acqua</a
+                >
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/visite-guidate" class="c-tag"
+                  >#visite guidate</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/778/palazzo-acqua-bari-aperture-straordinarie-feste-natale.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="6255">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title o-label__featrure o-label--purple"
+              href="/search/categories/eventi"
+              >Eventi</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Backstage Academy, concerto degli Appaloosa
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/pisatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/pisatoday-logo.svg"
+                  /><span class="c-byline__brand">pisatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:06
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Prosegue il format "Thursday I'm In Love",&nbsp; rassegna di
+              eventi culturali e concerti organizzata dall'Associazione
+              Culturale Backstage Academy Pisa. Gioved&igrave; 7 dicembre
+              appuntamento con il concerto degli Appaloosa,
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/concerti" class="c-tag">#concerti</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/6255/appaloosa-backstage-academy-pisa-7-dicembre.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="7074">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/cronaca"
+              >Cronaca</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Affidati i lavori per la realizzazione della nuova mensa
+              scolastica di Misano
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/riminitoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/riminitoday-logo.svg"
+                  /><span class="c-byline__brand">riminitoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:05
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              L&rsquo;opera, del costo di oltre 1 milione di euro, &egrave;
+              finanziata interamente con i fondi del Piano Nazionale di Ripresa
+              e Resilienza per la scuola
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/fondi-pnrr" class="c-tag">#fondi pnrr</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/7074/affidati-i-lavori-per-la-realizzazione-della-nuova-mensa-scolastica-di-misano.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="6720">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title o-label__featrure o-label--purple"
+              href="/search/categories/eventi"
+              >Eventi</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Tra tombola e concerti: arriva la magia del Natale a
+              Sant&rsquo;Agata
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/ravennatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/ravennatoday-logo.svg"
+                  /><span class="c-byline__brand">ravennatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:05
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Tutte le iniziative in programma nel periodo delle
+              festivit&agrave; natalizie
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/natale-2023" class="c-tag"
+                  >#natale 2023</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/6720/tra-tombola-e-concerti-arriva-la-magia-del-natale-a-sant-agata.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="5562">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/attualita"
+              >Attualit&agrave;</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Nel giorno del lutto per Giulia Cecchettin, Valdegamberi:
+              &laquo;Telenovela nazionale&raquo;
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/padovaoggi"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/padovaoggi-logo.svg"
+                  /><span class="c-byline__brand">padovaoggi</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:04
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Nuovo controcanto del consigliere regionale che ha definito il
+              funerale delle 22enne veneta &laquo;uno show mediatico senza
+              precedenti&raquo;. Zaia si dissocia, per +Europa sono
+              &laquo;parole indegne&raquo; e il
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/giulia-cecchettin" class="c-tag"
+                  >#Giulia Cecchettin</a
+                >
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/stefano-valdegamberi" class="c-tag"
+                  >#Stefano Valdegamberi</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/5562/lutto-giulia-cecchettin-valdegamberi-telenovela-nazionale-6-dicembre-2023.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="387">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/mostre"
+              >Mostre</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              &ldquo;&Egrave; solo un sogno&rdquo;. La mostra di Mauro Capitani
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/arezzonotizie"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/arezzonotizie-logo.svg"
+                  /><span class="c-byline__brand">arezzonotizie</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:04
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Dall&rsquo;8 dicembre al 7 gennaio 2024 il Palazzo del
+              Podest&agrave; di piazza Varchi 8, a Montevarchi (AR) ospita
+              &ldquo;&Egrave; solo un sogno&rdquo;, mostra personale di pittura
+              di Mauro
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/mauro-capitani" class="c-tag"
+                  >#Mauro Capitani</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/387/solo-sogno-2023-mostra-mauro-capitani.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="6259">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/cronaca"
+              >Cronaca</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Cascina, contributi affitto: pubblicata la graduatoria definitiva
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/pisatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/pisatoday-logo.svg"
+                  /><span class="c-byline__brand">pisatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:04
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Sono 189 le domande accolte, 11 in pi&ugrave; dell'anno precedente
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/contributi" class="c-tag">#contributi</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/6259/cascina-contributi-affitto-graduatoria-definitiva-2023.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="3682">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/calcio"
+              >Calcio</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Dominano in campo e segnano 10 gol
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/ilpiacenza"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/ilpiacenza-logo.svg"
+                  /><span class="c-byline__brand">ilpiacenza</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:03
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Rocambolesco risultato finale nella partita dell'Under 16 del
+              Piacenza
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/calcio" class="c-tag">#calcio</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/giovanili" class="c-tag">#giovanili</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/inter-club" class="c-tag">#inter club</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/piacenza-calcio" class="c-tag"
+                  >#piacenza calcio</a
+                >
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/under-16" class="c-tag">#under 16</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/3682/dominano-in-campo-e-segnano-10-gol.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="5964">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/attualita"
+              >Attualit&agrave;</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Marzolara, al via la costruzione di un nuovo prosciuttificio:
+              investimento di 28 milioni di euro
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/parmatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/parmatoday-logo.svg"
+                  /><span class="c-byline__brand">parmatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:02
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Il quinto stabilimento di Tino Prosciutti sar&agrave; operativo a
+              partire da gennaio 2025: ci saranno 100 nuovi posti di lavoro
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/economia" class="c-tag">#economia</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/5964/marzolara-nuovo-prosciuttificio.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="3339">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/calcio"
+              >Calcio</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Sestri Levante-Ancona si giocher&agrave; a porte chiuse
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/genovatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/genovatoday-logo.svg"
+                  /><span class="c-byline__brand">genovatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:01
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Continua il calvario delle partite casalinghe del Sestri Levante
+              che giocher&agrave; anche con l'Ancona a porte chiuse
+            </p>
+          </div>
+          <a
+            href="/news/3339/sestri-levante-ancona-stadio.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="2467">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/cronaca"
+              >Cronaca</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Il centro commerciale compie 30 anni: festa a ritmo di musica con
+              i clienti
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/ferraratoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/ferraratoday-logo.svg"
+                  /><span class="c-byline__brand">ferraratoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:01
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Previsto un saluto del sindaco e il taglio della torta: presenti
+              le attivit&agrave; storiche
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/centro-commerciale" class="c-tag"
+                  >#centro commerciale</a
+                >
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/compleanno" class="c-tag">#compleanno</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/festa" class="c-tag">#Festa</a>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/2467/trent-anni-del-centro-commerciale-festa-a-ritmo-di-musica-con-i-clienti.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="392">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title"
+              href="/search/categories/cultura"
+              >Cultura</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Santucce Storm Festival, gran finale con Berrino e Imarisio
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/arezzonotizie"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/arezzonotizie-logo.svg"
+                  /><span class="c-byline__brand">arezzonotizie</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:01
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Momento finale del Santucce Storm Festival che si terr&agrave;
+              venerd&igrave; 8 dicembre alle ore 16 al Teatro comunale
+              &ldquo;Mario Spina&rdquo; di Castiglion Fiorentino. Un
+              appuntamento di alto spessore
+            </p>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/marco-imarisio" class="c-tag"
+                  >#Marco Imarisio</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/news/392/santucce-storm-festival-franco-berrino-marco-imarisio.html"
+            class="c-card__link"
+          ></a>
+        </article>
+
+        <article class="c-card u-m-b-16" data-news-id="7224">
+          <div class="o-label">
+            <a
+              class="u-embossed u-embossed--link o-label__title o-label__featrure o-label--purple"
+              href="/search/categories/eventi"
+              >Eventi</a
+            >
+          </div>
+          <div class="c-card__content u-p-r-16">
+            <h1 class="c-card__title o-weight-medium u-m-t-12 u-m-b-12">
+              Giardino di Ninfa, apertura straordinaria l'8 dicembre
+            </h1>
+            <div class="c-byline u-m-b-12">
+              <div class="c-byline__source u-d-inline-block">
+                <a
+                  class="u-embossed u-embossed--link"
+                  href="/search/networks/romatoday"
+                >
+                  <img
+                    class="c-byline__logo u-m-r-8"
+                    src="/images/brands/romatoday-logo.svg"
+                  /><span class="c-byline__brand">romatoday</span>
+                </a>
+              </div>
+              <div class="c-byline__timestamp u-d-inline-block">
+                6 dicembre 2023 12:00
+              </div>
+            </div>
+            <p class="c-card__summary o-pica u-m-b-16">
+              Il Giardino di Ninfa annuncia l'apertura straordinaria nella
+              giornata dell'Immacolata. Venerd&igrave; 8 dicembre si
+              potr&agrave; svolgere un incantevole viaggio in uno dei giardini
+              pi&ugrave; belli del mondo. Se in
+            </p>
+          </div>
+          <a
+            href="/news/7224/giardino-di-ninfa-apertura-straordinaria-8-dicembre-2023.html"
+            class="c-card__link"
+          ></a>
+        </article> -->
+        <a
+          class="js-show-more-news c-button c-button--primary c-button--center u-m-b-16 u-m-t-16"
+          >Mostra pi&ugrave; articoli</a
+        >
+      </div>
+      <div class="col-md-5 u-overflow-auto u-height-90 py-3 u-p-l-24 u-p-r-24">
+        <div class="u-flex u-flex--spacebetween u-flex--middle mb-3">
+          <!-- <a href="#" class="c-button c-button--secondary">Email</a> -->
+          <div>
+            <ul class="c-tags u-list-reset">
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/alimentazione" class="c-tag"
+                  >#alimentazione</a
+                >
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/autunno" class="c-tag">#autunno</a>
+              </li>
+              <li class="u-m-b-4 u-p-r-8">
+                <a href="/search/tags/malessere" class="c-tag">#malessere</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a
+              href="#"
+              class="c-button c-button--email c-button--sm"
+              title="Condividi tramite email"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                class="bi bi-envelope-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="c-button c-button--whatsapp c-button--sm"
+              title="Condividi tramite Whatsapp"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                class="bi bi-whatsapp"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <article class="u-p-06 js-news-detail-page">
+          <h1>Mal d'autunno, vi sentite giù di tono? Ecco cosa fare</h1>
+          <h2 class="o-weight-regular o-doublepica">
+            Un malessere che si può combattere
+          </h2>
+          <div class="c-byline u-m-b-12">
+            <div class="c-byline__source">
+              <a
+                class="u-embossed u-embossed--link"
+                href="/search/networks/vicenzatoday"
+              >
+                <img
+                  class="c-byline__logo u-m-r-8"
+                  src="/images/brands/vicenzatoday-logo.svg"
+                /><span class="c-byline__brand">vicenzatoday</span>
+              </a>
+            </div>
+            <div class="c-byline__timestamp">6 dicembre 2023 12:17</div>
+          </div>
+
+          <div
+            class="o-img o-img--background"
+            style="
+              background-image: url('https://citynews-vicenzatoday.stgy.ovh/~media/original-hi/38228993490213/4-6-22.jpg');
+            "
+            alt="Mal d'autunno, vi sentite gi&amp;ugrave; di tono? Ecco cosa fare"
+          ></div>
+          <div></div>
+
+          <div class="c-article">
+            <p>
+              Questa forma di malessere stagionale colpisce durante i mesi più
+              freddi, è dovuto al passaggio dalle temperature calde a quelle
+              basse, dalla graduale diminuzione delle ore di luce e per finire
+              il fatidico cambio dell’ora che ci fa vivere di più al
+              buio.&nbsp;Il cielo diventa grigio, le giornate si accorciano e ci
+              sembra di avere meno tempo, complice la fine dell’ora legale e il
+              ripristino dell’ora solare.&nbsp; Anche la natura ci ricorda che
+              la stagione è cambiata: la vegetazione e i viali si ricoprono di
+              tappeti di foglie ingiallite.&nbsp;Il nostro organismo non rimane
+              certo indifferente a tutti questi cambiamenti.&nbsp;
+            </p>
+
+            <p>
+              Questa spossatezza stagionale colpisce durante i mesi più freddi.
+              Spiegheremo di cosa tratta, quali sono i sintomi e i rimedi
+            </p>
+
+            <h2 class="o-doublepica">Umore</h2>
+
+            <p>
+              Il primo a risentirne è l’umore&nbsp;(sbalzi d’umore, stati
+              d’ansia, depressione, irritabilità), ed anche il fisico reagisce
+              negativamente.
+              <strong
+                >Stanchezza, mancanza di energia, difficoltà di concentrazione,
+                mal di testa, insonnia, sensazione di malessere </strong
+              >diffuso, questi i sintomi più comuni, un disturbo molto frequente
+              dal momento che, secondo un indagine colpirebbe ben il 59% degli
+              italiani.
+            </p>
+
+            <h2 class="o-doublepica">La luce giova&nbsp;</h2>
+
+            <p>
+              Per aiutare l’orologio biologico a sincronizzarsi prima con i
+              nuovi ritmi stagionali,<strong>
+                la miglior cura è l’esposizione alla luce</strong
+              >
+              solare o artificiale ad ampio spettro, che ha effetti anche sui
+              neurotrasmettitori serotonina e melatonina. In presenza di luce
+              solare la ghiandola pineale secerne la
+              <strong>serotonina</strong> che, oltre a migliorare l’<strong
+                >umore, interviene nella regolazione del senso di fame e
+                sazietà</strong
+              >, mentre il&nbsp;buio produce<strong> melatonina</strong> che,
+              tra l’altro accentua il bisogno di riposo e abbassa il tono
+              dell’umore. Per le forme comuni e blande di disagio basta una cura
+              basata su passeggiate all’aperto di almeno 20/30 minuti al dì,
+              anche se il cielo è coperto.
+            </p>
+
+            <h2 class="o-doublepica">Termoregolazione</h2>
+
+            <p>
+              Secondo gli esperti, a causare il “mal d’autunno” sarebbe in primo
+              luogo un difetto del sistema di termoregolazione situato
+              esattamente nel cervello, nell’ipotalamo, dove hanno sede
+              l’orologio biologico e la ghiandola pineale.&nbsp; Accade quindi
+              che&nbsp;con i bruschi mutamenti meteorologici si
+              <strong>modifica la produzione di ormoni </strong>che incide sulle
+              difese immunitarie. A seguire “tempeste ormonali” tradotte in
+              sintomi neurovegetativi (irritabilità, nervosismo, sbalzi d’umore)
+              e in manifestazioni fisiche (malessere, stanchezza, mal di testa).
+            </p>
+
+            <h2 class="o-doublepica">Dieta: più carboidrati a pranzo.</h2>
+
+            <p>
+              In autunno aumentare a <strong>mezzogiorno</strong> l’assunzione
+              di amido rispetto alle proteine e fare l’opposto a cena.<strong>
+                Pane, pasta o riso integrali danno più magnesio, minerale
+                antifatica e vitamina B6,</strong
+              >
+              che partecipa alla sintesi della serotonina.
+              <strong>La sera meglio le proteine</strong> leggere di carni
+              magre, pesci o legumi, Hanno buone quote di L-triptofano: di notte
+              favorisce la produzione di melatonina. La sera pasti completi, ma
+              leggeri per non interferire con il sonno.
+            </p>
+
+            <p>
+              Ma ottobre è anche il mese in cui sulla tavola fanno capolino
+              alcune prelibatezze “energetiche” che ci aiutano ad affrontare le
+              giornate più difficili: <strong>cachi e castagne</strong> su
+              tutti.
+            </p>
+
+            <h2 class="o-doublepica">Cachi</h2>
+
+            <p>
+              <strong
+                >“Ricchi di vitamina C, betacarotene, potassio, magnesio e
+                fosforo, i cachi sono frutti molto energetici</strong
+              >
+              – spiega la dott.ssa Giovanna Geri, farmacista, nutrizionista e
+              co-fondatrice della startup Vitamina (takevitamina.com) – Per il
+              loro elevato contenuto calorico, in particolare zuccheri, sono
+              sconsigliati a chi è diabetico o obeso ma sono un’ottima fonte di
+              energia per anziani, bambini e adulti di ogni età. Inoltre sono un
+              rimedio naturale contro la stitichezza e grazie al contenuto di
+              antiossidanti hanno azione protettiva sul fegato.”
+            </p>
+
+            <h2 class="o-doublepica">Le castagne</h2>
+
+            <p>
+              Sono il frutto autunnale per eccellenza, estremamente versatile in
+              cucina, si possono utilizzare dall’antipasto al dolce senza alcuna
+              difficoltà. “Come i cachi, anche le castagne danno un
+              <strong
+                >notevole apporto calorico e sono ricche di vitamine</strong
+              >
+              – specifica la dott.ssa Geri di Vitamina - in particolare<strong>
+                vitamina A e vitamine del gruppo B</strong
+              >: sono infatti un’ottima fonte di acido folico o vitamina B9,
+              essenziale per le donne in gravidanza, per l’assorbimento e il
+              metabolismo del ferro. Contengono anche minerali, in particolare
+              potassio, magnesio e fosforo.”
+            </p>
+
+            <h2 class="o-doublepica">Carciofi</h2>
+
+            <p>
+              Anche il reparto verdura in ottobre gioca il suo asso nella manica
+              con il ritorno dei carciofi, compagni ideali per disintossicarsi e
+              depurarsi.
+            </p>
+
+            <p>
+              “I carciofi hanno proprietà<strong>
+                rimineralizzanti, epatoprotettrici, depurative e
+                antiossidanti</strong
+              >
+              – continua l’esperta - Sono ricchi di<strong>
+                vitamina C, vitamine del gruppo B, ferro e rame</strong
+              >; contengono inoltre discrete quantità di flavonoidi tra i quali
+              la cinarina che spicca per la sua utilità per il benessere del
+              fegato. Poiché la vitamina C con la cottura si perde, per
+              assorbire meglio il ferro contenuto in questi preziosi alimenti è
+              utile condirli con il limone, naturalmente ricco di acido
+              ascorbico, elemento fondamentale per assorbire il minerale.”
+            </p>
+
+            <h2 class="o-doublepica">Integratori</h2>
+
+            <p>
+              Qualora, però, con la sola alimentazione non fosse possibile
+              assumere le giuste quantità di nutrienti gli integratori che in
+              ottobre non devono mancare sono<strong>
+                vitamina C, Zinco e vitamine del gruppo B</strong
+              >: “questa combinazione - conclude la dott.ssa Giovanna Geri di
+              Vitamina – aiuta pelle e capelli che si trovano in difficoltà e
+              aiutano le difese immunitarie a rinforzarsi contro i primi cambi
+              di temperatura. Le vitamine del gruppo B, in particolare, sono
+              ricostituenti e danno un boost energetico molto importante.”
+            </p>
+          </div>
+
+          <a
+            target="_blank"
+            class="c-button c-button--primary u-m-b-16"
+            href="https://www.vicenzatoday.it/benessere/alimentazione/autunno-malessere-alimentazione-sintomi-rimedi.html"
+            alt="Mal d'autunno, vi sentite gi&amp;ugrave; di tono? Ecco cosa fare"
+            title="Mal d'autunno, vi sentite gi&amp;ugrave; di tono? Ecco cosa fare"
+          >
+            Leggi la notizia originale →
+          </a>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
