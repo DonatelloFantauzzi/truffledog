@@ -1813,6 +1813,7 @@ p {
 }
 a {
   text-decoration: none;
+  color: #00f;
 }
 .o-color-blue {
   color: #06c;
@@ -2025,7 +2026,7 @@ a {
   margin-left: 0.5rem;
 }
 .c-button--primary {
-  color: #fff;
+  color: #fff !important;
   background-color: #06c;
 }
 .c-button--primary:hover {
@@ -2045,8 +2046,34 @@ a {
 .c-button--light:hover {
   background-color: #e6e6e6;
 }
+.c-button--whatsapp {
+  color: #262626;
+  background-color: #e0e0e0;
+}
+.c-button--whatsapp:hover {
+  color: #fff !important;
+  background-color: #25d366 !important;
+}
+.c-button--whatsapp:hover {
+  background-color: #cacaca;
+}
+.c-button--email {
+  color: #262626;
+  background-color: #e0e0e0;
+  background-color: #e0e0e0;
+}
+.c-button--email:hover {
+  color: #fff !important;
+  background-color: #666 !important;
+}
+.c-button--email:hover {
+  background-color: #cacaca;
+}
 .c-button--lg {
   padding: 1rem 3rem;
+}
+.c-button--sm {
+  padding: 0.75rem;
 }
 .c-button--center {
   margin: 0 auto;
@@ -2935,8 +2962,20 @@ a {
 .u-minwidth {
   min-width: 50%;
 }
-.u-max-1600 {
-  max-width: 1600px;
+.u-max-1700 {
+  max-width: 1700px;
+}
+.u-overflow-auto {
+  overflow: auto;
+}
+.u-height-90 {
+  height: 90vh;
+}
+.u-news-active {
+  background-color: #fffacd !important;
+}
+.u-news-active h1 {
+  color: #262626;
 }
 .u-hidden {
   display: none;
